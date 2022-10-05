@@ -6,6 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
+    "test-headless": "ng test --watch=false --browsers=ChromeHeadless",
+    "test-code-coverage": "ng test --code-coverage --watch=false --browsers=ChromeHeadless",
     "test": "ng test"
   },
   "private": true,
