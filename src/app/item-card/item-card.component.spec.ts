@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ItemCardComponent } from './item-card.component';
 
 describe('ItemCardComponent', () => {
@@ -8,7 +8,8 @@ describe('ItemCardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ItemCardComponent ]
+      declarations: [ ItemCardComponent ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
     .compileComponents();
   });
@@ -22,4 +23,6 @@ describe('ItemCardComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+
 });

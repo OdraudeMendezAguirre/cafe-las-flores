@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ItemNavbarComponent } from './item-navbar.component';
 
 describe('ItemNavbarComponent', () => {
@@ -8,7 +8,8 @@ describe('ItemNavbarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ItemNavbarComponent ]
+      declarations: [ ItemNavbarComponent ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
     .compileComponents();
   });
