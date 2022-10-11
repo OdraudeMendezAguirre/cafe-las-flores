@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { PaginaNosotrosComponent } from './pagina-nosotros.component';
 
 describe('PaginaNosotrosComponent', () => {
@@ -8,8 +7,7 @@ describe('PaginaNosotrosComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PaginaNosotrosComponent ],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA]
+      declarations: [ PaginaNosotrosComponent ]
     })
     .compileComponents();
   });

@@ -8,8 +8,7 @@ describe('ItemNavbarComponent', () => {
 
   beforeEach(async () => {
     TestBed.configureTestingModule({
-      declarations: [ ItemNavbarComponent ],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA]
+      declarations: [ ItemNavbarComponent ]
     })
     .compileComponents();
   });
