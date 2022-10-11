@@ -7,7 +7,7 @@ describe('ItemNavbarComponent', () => {
   let fixture: ComponentFixture<ItemNavbarComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
+    TestBed.configureTestingModule({
       declarations: [ ItemNavbarComponent ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
