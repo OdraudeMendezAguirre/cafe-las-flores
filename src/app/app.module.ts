@@ -11,6 +11,7 @@ import { PaginaNosotrosComponent } from './pagina-nosotros/pagina-nosotros.compo
 import { PaginaOportunidadesComponent } from './pagina-oportunidades/pagina-oportunidades.component';
 import { PaginaContactoComponent } from './pagina-contacto/pagina-contacto.component';
 import { PaginaProductoComponent } from './pagina-producto/pagina-producto.component';
+import { PaginaIndexComponent } from './pagina-index/pagina-index.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { PaginaProductoComponent } from './pagina-producto/pagina-producto.compo
     PaginaNosotrosComponent,
     PaginaOportunidadesComponent,
     PaginaContactoComponent,
-    PaginaProductoComponent
+    PaginaProductoComponent,
+    PaginaIndexComponent
   ],
   imports: [
     BrowserModule,
