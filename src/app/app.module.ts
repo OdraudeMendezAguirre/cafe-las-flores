@@ -12,6 +12,9 @@ import { PaginaOportunidadesComponent } from './pagina-oportunidades/pagina-opor
 import { PaginaContactoComponent } from './pagina-contacto/pagina-contacto.component';
 import { PaginaProductoComponent } from './pagina-producto/pagina-producto.component';
 import { PaginaIndexComponent } from './pagina-index/pagina-index.component';
+import { PaginaIsesionComponent } from './pagina-isesion/pagina-isesion.component';
+import { PaginaRegistroComponent } from './pagina-registro/pagina-registro.component';
+import { PaginaBienvenidoComponent } from './pagina-bienvenido/pagina-bienvenido.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { PaginaIndexComponent } from './pagina-index/pagina-index.component';
     PaginaOportunidadesComponent,
     PaginaContactoComponent,
     PaginaProductoComponent,
-    PaginaIndexComponent
+    PaginaIndexComponent,
+    PaginaIsesionComponent,
+    PaginaRegistroComponent,
+    PaginaBienvenidoComponent
   ],
   imports: [
     BrowserModule,

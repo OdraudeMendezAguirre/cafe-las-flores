@@ -1,0 +1,43 @@
+.pagina{
+    height: 100vh;
+    background-color: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tarjeta{
+    background-color: #252525;
+    width: 60vw;
+    color: #f2f2f2;
+    border-radius: 15px;
+    padding: 2rem 6rem;
+    text-align: center;
+}
+
+button{
+    margin-top: 10px;
+}
+
+a{
+    color: #f2f2f2;
+}
+
+p{
+    margin-top: 20px;
+}
+
+@media screen and (max-width:1000px) {
+    .tarjeta{
+        width: 80vw;
+        padding: 2rem 4rem;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .tarjeta{
+        width: 90vw;
+        padding: 2rem 2rem;
+    }
+}
