@@ -15,6 +15,7 @@ import { PaginaIndexComponent } from './pagina-index/pagina-index.component';
 import { PaginaIsesionComponent } from './pagina-isesion/pagina-isesion.component';
 import { PaginaRegistroComponent } from './pagina-registro/pagina-registro.component';
 import { PaginaBienvenidoComponent } from './pagina-bienvenido/pagina-bienvenido.component';
+import { PaginaExitoComponent } from './pagina-exito/pagina-exito.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { PaginaBienvenidoComponent } from './pagina-bienvenido/pagina-bienvenido
     PaginaIndexComponent,
     PaginaIsesionComponent,
     PaginaRegistroComponent,
-    PaginaBienvenidoComponent
+    PaginaBienvenidoComponent,
+    PaginaExitoComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,25 @@
+.tienda{
+    background-color: #A60D1A;
+    width: 100%;
+    padding: 8rem;
+    color: #f2f2f2;
+}
+
+.tienda .encabezado h2{
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.fila{
+    padding: 2rem;
+    display: flex;
+    flex-direction: wrap;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+@media screen and (max-width: 991px){
+    .tienda{
+        padding: 8rem 2rem;
+    }
+}

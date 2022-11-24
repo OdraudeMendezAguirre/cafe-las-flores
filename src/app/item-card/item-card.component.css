@@ -1,6 +1,5 @@
 a{
     text-decoration: none;
-    padding: 50px;
 }
 
 a .tarjeta{
@@ -10,6 +9,8 @@ a .tarjeta{
     border-color: #f2f2f2;
     text-decoration: none;
     color: #f2f2f2;
+    padding: 0px 20px;
+    margin-top: 2rem;
 }
 
 a .tarjeta:hover{
