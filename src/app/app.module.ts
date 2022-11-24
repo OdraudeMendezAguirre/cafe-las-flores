@@ -16,6 +16,8 @@ import { PaginaIsesionComponent } from './pagina-isesion/pagina-isesion.componen
 import { PaginaRegistroComponent } from './pagina-registro/pagina-registro.component';
 import { PaginaBienvenidoComponent } from './pagina-bienvenido/pagina-bienvenido.component';
 import { PaginaExitoComponent } from './pagina-exito/pagina-exito.component';
+import { ItemCarritoComponent } from './item-carrito/item-carrito.component';
+import { PaginaCarritoComponent } from './pagina-carrito/pagina-carrito.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { PaginaExitoComponent } from './pagina-exito/pagina-exito.component';
     PaginaIsesionComponent,
     PaginaRegistroComponent,
     PaginaBienvenidoComponent,
-    PaginaExitoComponent
+    PaginaExitoComponent,
+    ItemCarritoComponent,
+    PaginaCarritoComponent
   ],
   imports: [
     BrowserModule,
