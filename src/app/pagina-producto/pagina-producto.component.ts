@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Producto } from '../Entidades/producto';
+import { ProductoService } from '../productos.service';
+import { ActivatedRoute } from '@angular/router';
+import { CarritoService } from '../carrito.service';
 
 @Component({
   selector: 'app-pagina-producto',
@@ -7,9 +11,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaginaProductoComponent implements OnInit {
 
-  constructor() { }
+  constructor(public productoService:ProductoService, private rutaActiva: ActivatedRoute, public carritoService:CarritoService) { }
+
+  producto:Producto=new Producto();
 
   ngOnInit(): void {
+    this.productoService.setId(this.rutaActiva.snapshot.params.id);
+    this.productoService.getProductosId().subscribe(resp=>{
+      this.producto=resp;
+    }, error=>{console.error(error)})
+  }
+
+  agregar(){
+    this.carritoService.agregar(this.producto).subscribe(resp=>{
+    },
+      error=> {console.error(error)}
+    )
   }
 
 }
