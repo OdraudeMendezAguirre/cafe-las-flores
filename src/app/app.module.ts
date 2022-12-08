@@ -11,6 +11,13 @@ import { PaginaNosotrosComponent } from './pagina-nosotros/pagina-nosotros.compo
 import { PaginaOportunidadesComponent } from './pagina-oportunidades/pagina-oportunidades.component';
 import { PaginaContactoComponent } from './pagina-contacto/pagina-contacto.component';
 import { PaginaProductoComponent } from './pagina-producto/pagina-producto.component';
+import { PaginaIndexComponent } from './pagina-index/pagina-index.component';
+import { PaginaIsesionComponent } from './pagina-isesion/pagina-isesion.component';
+import { PaginaRegistroComponent } from './pagina-registro/pagina-registro.component';
+import { PaginaBienvenidoComponent } from './pagina-bienvenido/pagina-bienvenido.component';
+import { PaginaExitoComponent } from './pagina-exito/pagina-exito.component';
+import { ItemCarritoComponent } from './item-carrito/item-carrito.component';
+import { PaginaCarritoComponent } from './pagina-carrito/pagina-carrito.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +29,14 @@ import { PaginaProductoComponent } from './pagina-producto/pagina-producto.compo
     PaginaNosotrosComponent,
     PaginaOportunidadesComponent,
     PaginaContactoComponent,
-    PaginaProductoComponent
+    PaginaProductoComponent,
+    PaginaIndexComponent,
+    PaginaIsesionComponent,
+    PaginaRegistroComponent,
+    PaginaBienvenidoComponent,
+    PaginaExitoComponent,
+    ItemCarritoComponent,
+    PaginaCarritoComponent
   ],
   imports: [
     BrowserModule,
