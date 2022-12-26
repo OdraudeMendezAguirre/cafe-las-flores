@@ -1,39 +1,59 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, throwError } from 'rxjs';
+import { Observable } from 'rxjs';
+import { Producto } from './Entidades/producto';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductoService{
-  id:number=0;
-  consultar = "http://localhost:8085/productos";
-  cid= "http://localhost:8085/productos/";
 
-  constructor(private http: HttpClient) { }
+  private url = 'http://localhost:8085/api';
+  userToken ?:any;
 
-  setId(id:number){
-    this.cid=this.cid+id;
+
+  constructor( private http: HttpClient ) {}
+
+  getProductos(): Observable<Producto> {
+
+    return this.http.get<Producto>(`${this.url}/productos`,this.httpOptions);
   }
 
-  getProductos(): Observable<any> {
-    return this.http.get(this.consultar);
+  getProductosId(id: any): Observable<Producto> {
+    return this.http.get<Producto>(`${this.url}/productos/${id}`, this.httpOptions);
   }
 
-  getProductosId(): Observable<any> {
-    return this.http.get(this.cid);
+  deleteProductos(id: any) {
+    return this.http.delete(`${this.url}/productos/${id}`, this.httpOptions2)
+    .pipe((resp:any) => {
+        return resp;
+      }
+    );
+
   }
 
-  handleError(error: { error: { message: string; }; status: any; message: any; }) {
-        let errorMessage = '';
-        if(error.error instanceof ErrorEvent) {
-          // Get client-side error
-          errorMessage = error.error.message;
-        } else {
-          // Get server-side error
-          errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
-        }
-        window.alert(errorMessage);
-        return throwError(errorMessage);
-     }
+  saveProductos(producto: Producto): Observable<Producto>{
+    return this.http.post<Producto>(`${this.url}/productos`, producto,this.httpOptions);
+  }
+
+  updateProductos(producto:Producto, id:any): Observable<Producto> {
+    return this.http.put<Producto>(`${this.url}/productos/${id}`, producto,this.httpOptions);
+  }
+
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${localStorage.getItem('token')}`
+
+    })
+  };
+
+  httpOptions2 = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+      responseType: 'text'
+    })
+  };
+
 }

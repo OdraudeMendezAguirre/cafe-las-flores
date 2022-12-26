@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductoService } from '../productos.service';
+import { Producto } from '../Entidades/producto';
 
 @Component({
   selector: 'app-pagina-tienda',
@@ -7,7 +8,7 @@ import { ProductoService } from '../productos.service';
   styleUrls: ['./pagina-tienda.component.css']
 })
 export class PaginaTiendaComponent implements OnInit {
-  lista:any[]=[];
+  lista:any;
 
   constructor(public productoService:ProductoService) { }
 

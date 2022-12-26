@@ -3,6 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 import { ItemNavbarComponent } from './item-navbar/item-navbar.component';
 import { ItemFooterComponent } from './item-footer/item-footer.component';
 import { ItemCardComponent } from './item-card/item-card.component';
@@ -18,6 +22,8 @@ import { PaginaBienvenidoComponent } from './pagina-bienvenido/pagina-bienvenido
 import { PaginaExitoComponent } from './pagina-exito/pagina-exito.component';
 import { ItemCarritoComponent } from './item-carrito/item-carrito.component';
 import { PaginaCarritoComponent } from './pagina-carrito/pagina-carrito.component';
+import { ProductoService } from './productos.service';
+
 
 @NgModule({
   declarations: [
@@ -40,9 +46,12 @@ import { PaginaCarritoComponent } from './pagina-carrito/pagina-carrito.componen
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [ProductoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
