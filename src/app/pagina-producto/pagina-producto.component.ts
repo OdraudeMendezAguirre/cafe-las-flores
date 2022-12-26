@@ -16,8 +16,7 @@ export class PaginaProductoComponent implements OnInit {
   producto:Producto=new Producto();
 
   ngOnInit(): void {
-    this.productoService.setId(this.rutaActiva.snapshot.params.id);
-    this.productoService.getProductosId().subscribe(resp=>{
+    this.productoService.getProductosId(this.rutaActiva.snapshot.params.id).subscribe(resp=>{
       this.producto=resp;
     }, error=>{console.error(error)})
   }
