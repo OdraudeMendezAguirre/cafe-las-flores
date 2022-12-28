@@ -1,19 +1,39 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Producto } from './Entidades/producto';
 import { Injectable } from "@angular/core";
 import { Usuario } from './Entidades/usuario';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { LoginUsr } from './Entidades/loginUsr';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthService {
 
-  private url = 'http://localhost:8080/api';
+  private url = 'http://localhost:8085/api';
   userToken ?: any;
 
   constructor( private http: HttpClient ) {
     this.readToken();
   }
+
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${localStorage.getItem('token')}`
+
+    })
+  };
+
+  httpOptions2 = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+      responseType: 'text'
+    })
+  };
 
   registro(usuario: Usuario){
     console.log(usuario)
@@ -27,8 +47,8 @@ export class AuthService {
     };
 
     return this.http.post(`${this.url}/auth/registrar`, body, {responseType: 'text'})
-    .pipe(resp => {
-    return resp });
+    .pipe( map((resp: any) => {
+    return resp }));
   }
 
   Login(user:LoginUsr){
@@ -38,11 +58,11 @@ export class AuthService {
     };
 
     return this.http.post(`${this.url}/auth/iniciarSesion`, body)
-    .pipe((resp:any)=>{
+    .pipe(map((resp:any)=>{
       console.log(resp);
       this.saveToken(resp['tokenDeAcceso']);
       return resp;
-    });
+    }));
   }
 
   Logout(){
@@ -67,19 +87,12 @@ export class AuthService {
     return this.userToken.length > 2;
   }
 
-  httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${localStorage.getItem('token')}`
+  getProductos(): Observable<Producto> {
+    return this.http.get<Producto>(`${this.url}/productos`,this.httpOptions);
+  }
 
-    })
-  };
+  getProductoId(id: any): Observable<Producto> {
+    return this.http.get<Producto>(`${this.url}/productos/${id}`, this.httpOptions);
+  }
 
-  httpOptions2 = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${localStorage.getItem('token')}`,
-      responseType: 'text'
-    })
-  };
 }

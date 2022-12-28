@@ -1,10 +1,9 @@
 export class Usuario{
   id_usuario ?:number;
-  contrasena ?:string; //
-  email ?:string;//
-  nombre_completo ?:string; //
+  username ?: string;
+  nombre_completo ?:string;
+  telefono ?:string;
+  email ?:string;
+  contrasena ?:string;
   spam ?:boolean;
-  telefono ?:number; //
-  username ?: string; //
-
 }

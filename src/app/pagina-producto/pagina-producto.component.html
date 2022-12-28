@@ -4,31 +4,25 @@
     <section class="col-12 col-lg-4 titulo">
         <h2>Café Las Flores</h2>
         <h3>Tienda en Línea</h3>
+
     </section>
     <section class="col-12 col-lg-4 producto-img">
-        <img src="../../assets/cafe-grano.jpg">
+        <img src="{{producto.imagen}}">
     </section>
 
-    <section class="col-12 col-lg-4 producto-info">    
-        <h1>Aquí va el nombre del Producto</h1>
+    <section class="col-12 col-lg-4 producto-info">
+        <h1>{{producto.articulo}}</h1>
+          <p>{{producto.descripcion}}</p>
+
         <section class="info">
-            <p class="campo">Cantidad</p>
-            <p>0 pz</p>
-            <p class="campo">Tipo</p>
-            <p>Tipo de Producto</p>
+            <p>Disponibles: {{producto.disponibilidad}} pz</p>
         </section>
-        <h2>$XX.XX MXN</h2>
+        <h2>${{producto.precio}}</h2>
         <section class="botones">
             <button class="mybtn mybtn-red comprar">Comprar</button>
             <button class="mybtn mybtn-red">Añadir al Carrito</button>
         </section>
     </section>
-
-</section>
-
-<section class="descripcion">
-    <h3>Descripción Producto</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, quidem. Sint consequatur iste inventore sed natus quae et adipisci voluptates nam! Iste at cumque, odit dolores pariatur ad architecto placeat? Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe beatae maxime sequi eum ipsum iusto corrupti esse quo explicabo iure. Voluptatum ipsam quibusdam, neque cumque blanditiis amet pariatur excepturi magni.</p>
 </section>
 
 <section class="imagenes">

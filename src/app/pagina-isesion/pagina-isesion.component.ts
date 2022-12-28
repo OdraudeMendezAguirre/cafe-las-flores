@@ -39,7 +39,7 @@ export class PaginaIsesionComponent implements OnInit {
         localStorage.setItem ('usernameOrEmail',JSON.stringify( this.user.usernameOrEmail));
          console.log(resp)
        }
-       this.router.navigateByUrl('/crud');
+       this.router.navigateByUrl('/index');
     }
   )
 }

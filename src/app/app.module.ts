@@ -9,20 +9,16 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { ItemNavbarComponent } from './item-navbar/item-navbar.component';
 import { ItemFooterComponent } from './item-footer/item-footer.component';
-import { ItemCardComponent } from './item-card/item-card.component';
 import { PaginaTiendaComponent } from './pagina-tienda/pagina-tienda.component';
 import { PaginaNosotrosComponent } from './pagina-nosotros/pagina-nosotros.component';
-import { PaginaOportunidadesComponent } from './pagina-oportunidades/pagina-oportunidades.component';
-import { PaginaContactoComponent } from './pagina-contacto/pagina-contacto.component';
+
 import { PaginaProductoComponent } from './pagina-producto/pagina-producto.component';
 import { PaginaIndexComponent } from './pagina-index/pagina-index.component';
 import { PaginaIsesionComponent } from './pagina-isesion/pagina-isesion.component';
 import { PaginaRegistroComponent } from './pagina-registro/pagina-registro.component';
-import { PaginaBienvenidoComponent } from './pagina-bienvenido/pagina-bienvenido.component';
-import { PaginaExitoComponent } from './pagina-exito/pagina-exito.component';
 import { ItemCarritoComponent } from './item-carrito/item-carrito.component';
 import { PaginaCarritoComponent } from './pagina-carrito/pagina-carrito.component';
-import { ProductoService } from './productos.service';
+import { AuthService } from './auth.service';
 
 
 @NgModule({
@@ -30,17 +26,12 @@ import { ProductoService } from './productos.service';
     AppComponent,
     ItemNavbarComponent,
     ItemFooterComponent,
-    ItemCardComponent,
     PaginaTiendaComponent,
     PaginaNosotrosComponent,
-    PaginaOportunidadesComponent,
-    PaginaContactoComponent,
     PaginaProductoComponent,
     PaginaIndexComponent,
     PaginaIsesionComponent,
     PaginaRegistroComponent,
-    PaginaBienvenidoComponent,
-    PaginaExitoComponent,
     ItemCarritoComponent,
     PaginaCarritoComponent
   ],
@@ -51,7 +42,7 @@ import { ProductoService } from './productos.service';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [ProductoService],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

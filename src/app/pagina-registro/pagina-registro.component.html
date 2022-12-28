@@ -4,13 +4,13 @@
     <form id="register-form" class="text-left" (ngSubmit)="onSubmit()">
 
       <label for="exampleInputNombre" class="form-label">Nombre Completo</label>
-      <input type="text" class="form-control" id="exampleInputNombre" aria-describedby="nombreHelp" name="nombre" placeholder="Nombre completo" [(ngModel)]="usuario.nombre_completo">
+      <input type="text" class="form-control" id="exampleInputNombre" aria-describedby="nombreHelp" name="nombre_completo" placeholder="Nombre completo" [(ngModel)]="usuario.nombre_completo">
 
       <label for="exampleInputUsername" class="form-label">Username</label>
       <input type="text" class="form-control" id="exampleInputUsername" aria-describedby="usernameHelp" name="username" placeholder="user92" [(ngModel)]="usuario.username">
 
       <label for="exampleInputTelefono" class="form-label">Telefono</label>
-      <input type="number" class="form-control" id="exampleInputTelefono" aria-describedby="elefonoHelp" name="elefono" placeholder="2721234567" [(ngModel)]="usuario.telefono">
+      <input type="text" class="form-control" id="exampleInputTelefono" aria-describedby="telefonoHelp" name="telefono" placeholder="2721234567" [(ngModel)]="usuario.telefono">
 
       <label for="exampleInputEmail1" class="form-label">Correo</label>
       <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="ejemplo@correo.com" [(ngModel)]="usuario.email">
@@ -22,7 +22,7 @@
       <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" name="password" [(ngModel)]="password">
 
       <label class="col-form-label" for="flexSwitchCheckDefault">recibir ofertas y notificaciones al correo electronico</label>
-      <input class="form-check-input form-switch form-control" type="checkbox" id="flexSwitchCheckDefault" [(ngModel)]="usuario.spam" >
+      <input class="form-check-input form-switch form-control" type="checkbox" id="flexSwitchCheckDefault" name="spam" [(ngModel)]="usuario.spam" >
 
       <section class="botones">
         <button type="submit" class="mybtn mybtn-red">Regístrate</button>
