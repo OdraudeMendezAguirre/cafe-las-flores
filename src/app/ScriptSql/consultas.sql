@@ -2,3 +2,5 @@ INSERT INTO productos_tb (articulo,descripcion,disponibilidad,imagen,precio) VAL
 
 INSERT INTO productos_tb (articulo,descripcion,disponibilidad,imagen,precio) VALUES ('Salsa de Café','Deliciosa Salsa artesanal de cafe de 100g',20,'../../assets/salsadecafe.jpg',60);
 INSERT INTO productos_tb (articulo,descripcion,disponibilidad,imagen,precio) VALUES ('Cafe Veracruz','Paquete de cafe veracruz 100% Natural (Cafe Oscuro), Cont. 1kg',20,'../../assets/salsadecafe.jpg',50);
+
+INSERT INTO envios_tb (direccion,estado,municipio,realizado,referencia_vivienda,id_usuario) VALUES ('direccion','estado','municipio',false,'referencia',1);

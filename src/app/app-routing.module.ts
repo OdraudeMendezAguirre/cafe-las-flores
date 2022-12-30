@@ -8,7 +8,7 @@ import { PaginaNosotrosComponent } from './pagina-nosotros/pagina-nosotros.compo
 import { PaginaProductoComponent } from './pagina-producto/pagina-producto.component';
 import { PaginaRegistroComponent } from './pagina-registro/pagina-registro.component';
 import { PaginaTiendaComponent } from './pagina-tienda/pagina-tienda.component';
-
+import { PaginaEnvioComponent } from './pagina-envio/pagina-envio.component';
 const routes: Routes = [
   { path: 'carrito', component: PaginaCarritoComponent },
   { path: 'index', component: PaginaIndexComponent },
@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'tienda/:id', component: PaginaProductoComponent },
   { path: 'signin', component: PaginaRegistroComponent },
   { path: 'tienda', component: PaginaTiendaComponent },
-
+  { path: 'envio', component: PaginaEnvioComponent }
 ];
 
 @NgModule({

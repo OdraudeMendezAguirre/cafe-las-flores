@@ -1,0 +1,33 @@
+<section class="iniciar-sesion">
+  <section class="tarjeta-inicio">
+    <h1>Datos de envio</h1>
+    <form id="register-form" class="text-left" >
+
+      <label for="exampleInputDireccion" class="form-label">Direccion</label>
+      <input type="text" class="form-control" id="exampleInputDireccion"
+      aria-describedby="direccionHelp" name="direccion"
+      placeholder="C. Ejemplo No. 123" [(ngModel)]="envio.direccion">
+
+      <label for="exampleInputMunicipio" class="form-label">Municipio</label>
+      <input type="text" class="form-control" id="exampleInputMunicipio"
+      aria-describedby="municipioHelp" name="municipio"
+      placeholder="Orizaba" [(ngModel)]="envio.municipio">
+
+      <label for="exampleInputEstado" class="form-label">Estado</label>
+      <input type="text" class="form-control" id="exampleInputEstado"
+      aria-describedby="estadoHelp" name="estado"
+      placeholder="Veracruz" [(ngModel)]="envio.estado">
+
+      <label for="exampleInputReferenciaVivienda" class="form-label">Referencia de Vivienda</label>
+      <input type="text" class="form-control" id="exampleInputReferenciaVivienda"
+      aria-describedby="referenciaViviendaHelp" name="referenciaVivienda"
+      placeholder="Casa Negra" [(ngModel)]="envio.referencia_vivienda">
+
+      <section class="botones">
+        <button type="submit" class="mybtn mybtn-red" (click)="continuar()">Continuar</button>
+        <button type="submit" class="mybtn mybtn-dark" (click)="cancelar()">Cancelar Compra</button>
+      </section>
+
+    </form>
+  </section>
+</section>
