@@ -1,19 +1,50 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Producto } from './Entidades/producto';
 import { Injectable } from "@angular/core";
 import { Usuario } from './Entidades/usuario';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { LoginUsr } from './Entidades/loginUsr';
+import { Envio } from './Entidades/Envio';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthService {
 
-  private url = 'http://localhost:8080/api';
+  private url = 'http://localhost:8085/api';
   userToken ?: any;
+  usuario : Usuario = new Usuario();
+  envio : Envio = new Envio();
 
   constructor( private http: HttpClient ) {
     this.readToken();
   }
+
+  getUser(){
+    return this.usuario;
+  }
+
+  getEnvio(){
+    return this.envio;
+  }
+
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${localStorage.getItem('token')}`
+
+    })
+  };
+
+  httpOptions2 = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+      responseType: 'text'
+    })
+  };
 
   registro(usuario: Usuario){
     console.log(usuario)
@@ -27,8 +58,8 @@ export class AuthService {
     };
 
     return this.http.post(`${this.url}/auth/registrar`, body, {responseType: 'text'})
-    .pipe(resp => {
-    return resp });
+    .pipe( map((resp: any) => {
+    return resp }));
   }
 
   Login(user:LoginUsr){
@@ -36,13 +67,20 @@ export class AuthService {
       usernameOrEmail: user.usernameOrEmail,
       password: user.password
     };
+    this.http.post(`${this.url}/auth/user`, body).subscribe(resp =>{
+      console.log(resp);
+      this.usuario=resp;
+      return resp;
+    });
 
     return this.http.post(`${this.url}/auth/iniciarSesion`, body)
-    .pipe((resp:any)=>{
+    .pipe(map((resp:any)=>{
       console.log(resp);
       this.saveToken(resp['tokenDeAcceso']);
       return resp;
-    });
+    }));
+
+
   }
 
   Logout(){
@@ -67,19 +105,39 @@ export class AuthService {
     return this.userToken.length > 2;
   }
 
-  httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${localStorage.getItem('token')}`
+  info(): Observable<any> {
+    return this.http.get(`${this.url}/info`);
+  }
 
-    })
-  };
+  getProductos(): Observable<Producto> {
+    return this.http.get<Producto>(`${this.url}/productos`,this.httpOptions);
+  }
 
-  httpOptions2 = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${localStorage.getItem('token')}`,
-      responseType: 'text'
-    })
-  };
+  getProductoId(id: any): Observable<Producto> {
+    return this.http.get<Producto>(`${this.url}/productos/${id}`, this.httpOptions);
+  }
+
+  guardarEnvio(envio:Envio){
+    const body = {
+      direccion : envio.direccion,
+      municipio : envio.municipio,
+      estado : envio.estado,
+      referencia_vivienda : envio.referencia_vivienda,
+      realizado : envio.realizado,
+      usuario : envio.usuario
+    };
+    this.http.post(`${this.url}/envio/guardar`,body).subscribe(resp => {
+      console.log(resp);
+      this.envio=resp;
+      return resp;
+    });
+  }
+
+  stripeConfirmar(id:string): Observable<String>{
+    return this.http.post<String>(`${this.url}/stripe/confirm/${id}`,{});
+  }
+
+  stripeCancelar(id:string): Observable<String>{
+    return this.http.post<String>(`${this.url}/stripe/cancel/${id}`,{});
+  }
 }

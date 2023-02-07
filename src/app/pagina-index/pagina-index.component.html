@@ -6,9 +6,7 @@
                 <h1>Café Las Flores</h1>
                 <h2>Veracruz, México</h2>
                 <hr>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime nemo, repudiandae eveniet consequatur
-                    alias, suscipit ipsam placeat nam nulla voluptates, fugiat magni quia! Beatae, nesciunt optio.
-                    Possimus non beatae deleniti?</p>
+                <p>Somos una distribuidora de cafe dedicada a vender y entregar el mejor cafe a nuestros clientes, desde cordoba hasta orizaba ¡y con una amplia variedad de presentaciones nuestro cafe las flores es 100% natural y 100% recomendado para todo hogar y establecimiento! ¿Te lo vas a perder?</p>
             </div>
         </div>
     </header>
@@ -33,77 +31,10 @@
                     <h2>¿Una tacita de café delux?</h2>
                     <hr>
                     <p>Encuentra el mejor café de grano de lujo a tu servicio en toda nuestra región ¡YA DISPONIBLE!</p>
-                    <button class="mybtn mybtn-brown">
+                    <button class="mybtn mybtn-brown" (click)="tienda()">
                         Ir allá
                     </button>
                 </section>
-                <section class="logo col-6">
-                    <img src="">
-                </section>
-            </section>
-        </section>
-        <section class="tienda">
-            <section class="texto">
-                <h2>¡Los más vendidos!</h2>
-                <p>Estos son los productos más vendidos de nuestro mostrador...</p>
-            </section>
-            <section class="productos">
-                <app-item-card></app-item-card>
-                <app-item-card></app-item-card>
-                <app-item-card></app-item-card>
-                <app-item-card></app-item-card>
-            </section>
-        </section>
-        <section class="formulario">
-            <section class="form">
-                <div class="container py-4 d-flex flex-column justify-content-center">
-                    <!-- Bootstrap 5 starter form -->
-                    <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-    
-                        <!-- Name input -->
-                        <div class="mb-3">
-                            <label class="form-label" for="name">Nombre</label>
-                            <input class="form-control" id="name" type="text" placeholder="Nombre"
-                                data-sb-validations="required" />
-                            <div class="invalid-feedback" data-sb-feedback="name:required">Nombre es requerido.</div>
-                        </div>
-    
-                        <!-- Email address input -->
-                        <div class="mb-3">
-                            <label class="form-label" for="emailAddress">Email</label>
-                            <input class="form-control" id="emailAddress" type="email" placeholder="Email Address"
-                                data-sb-validations="required, email" />
-                            <div class="invalid-feedback" data-sb-feedback="emailAddress:required">Correo electrónico requerido.</div>
-                            <div class="invalid-feedback" data-sb-feedback="emailAddress:email">Correo no Válido</div>
-                        </div>
-    
-                        <!-- Message input -->
-                        <div class="mb-3">
-                            <label class="form-label" for="message">Mensaje</label>
-                            <textarea class="form-control" id="message" type="text" placeholder="Message"
-                                style="height: 10rem;" data-sb-validations="required"></textarea>
-                            <div class="invalid-feedback" data-sb-feedback="message:required">Mensaje</div>
-                        </div>
-    
-                        <!-- Form submissions success message -->
-                        <div class="d-none" id="submitSuccessMessage">
-                            <div class="text-center mb-3">Formulario Enviado</div>
-                        </div>
-    
-                        <!-- Form submissions error message -->
-                        <div class="d-none" id="submitErrorMessage">
-                            <div class="text-center text-danger mb-3">Error al enviar mensaje.</div>
-                        </div>
-    
-                        <!-- Form submit button -->
-                        <div class="d-grid">
-                            <button class="mybtn mybtn-red btn-lg disabled mt-3" id="submitButton" type="submit">Enviar</button>
-                        </div>
-    
-                    </form>
-                </div>
-            </section>
-            <section class="foto-form">
             </section>
         </section>
     </section>

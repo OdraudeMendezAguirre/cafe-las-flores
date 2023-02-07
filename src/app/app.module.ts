@@ -6,23 +6,24 @@ import { AppComponent } from './app.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { NgxStripeModule } from 'ngx-stripe';
+
 
 import { ItemNavbarComponent } from './item-navbar/item-navbar.component';
 import { ItemFooterComponent } from './item-footer/item-footer.component';
-import { ItemCardComponent } from './item-card/item-card.component';
 import { PaginaTiendaComponent } from './pagina-tienda/pagina-tienda.component';
 import { PaginaNosotrosComponent } from './pagina-nosotros/pagina-nosotros.component';
-import { PaginaOportunidadesComponent } from './pagina-oportunidades/pagina-oportunidades.component';
-import { PaginaContactoComponent } from './pagina-contacto/pagina-contacto.component';
+
 import { PaginaProductoComponent } from './pagina-producto/pagina-producto.component';
 import { PaginaIndexComponent } from './pagina-index/pagina-index.component';
 import { PaginaIsesionComponent } from './pagina-isesion/pagina-isesion.component';
 import { PaginaRegistroComponent } from './pagina-registro/pagina-registro.component';
-import { PaginaBienvenidoComponent } from './pagina-bienvenido/pagina-bienvenido.component';
-import { PaginaExitoComponent } from './pagina-exito/pagina-exito.component';
 import { ItemCarritoComponent } from './item-carrito/item-carrito.component';
 import { PaginaCarritoComponent } from './pagina-carrito/pagina-carrito.component';
-import { ProductoService } from './productos.service';
+import { AuthService } from './auth.service';
+import { PaginaEnvioComponent } from './pagina-envio/pagina-envio.component';
+import { TicketComponent } from './ticket/ticket.component';
 
 
 @NgModule({
@@ -30,28 +31,27 @@ import { ProductoService } from './productos.service';
     AppComponent,
     ItemNavbarComponent,
     ItemFooterComponent,
-    ItemCardComponent,
     PaginaTiendaComponent,
     PaginaNosotrosComponent,
-    PaginaOportunidadesComponent,
-    PaginaContactoComponent,
     PaginaProductoComponent,
     PaginaIndexComponent,
     PaginaIsesionComponent,
     PaginaRegistroComponent,
-    PaginaBienvenidoComponent,
-    PaginaExitoComponent,
     ItemCarritoComponent,
-    PaginaCarritoComponent
+    PaginaCarritoComponent,
+    PaginaEnvioComponent,
+    TicketComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    NgxStripeModule.forRoot('pk_test_51MGt9xDJ3kXl0OHITJOwWHnTWTsXopHkBfHwfdRupYWXkjwVgpzChxiTi0JOqqexxEoxfFzUFiee0hLQ9HUOVSWz00CfDITHsC')
   ],
-  providers: [ProductoService],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

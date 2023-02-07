@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductoService } from '../productos.service';
 import { Producto } from '../Entidades/producto';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-pagina-tienda',
@@ -9,11 +9,10 @@ import { Producto } from '../Entidades/producto';
 })
 export class PaginaTiendaComponent implements OnInit {
   lista:any;
-
-  constructor(public productoService:ProductoService) { }
+  constructor(private api:AuthService) { }
 
   ngOnInit(): void {
-    this.productoService.getProductos().subscribe(resp=>{
+    this.api.getProductos().subscribe(resp=>{
       this.lista=resp;
     }, error=>{console.error(error)})
   }
