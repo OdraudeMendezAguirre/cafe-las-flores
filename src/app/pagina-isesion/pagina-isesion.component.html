@@ -1,0 +1,15 @@
+<section class="iniciar-sesion">
+  <section class="tarjeta-inicio">
+    <h1>Iniciar Sesión</h1>
+    <form (ngSubmit)="Login(f)" #f="ngForm">
+      <label for="exampleInputEmail1" class="form-label">Correo</label>
+      <input type="text" id="usernameOrEmail" class="form-control" aria-describedby="emailHelp" name="usernameOrEmail"  placeholder="usernameOrEmail"  [(ngModel)]="user.usernameOrEmail" >
+      <label for="inputPassword6" class="col-form-label">Contraseña</label>
+      <input type="password" id="password" class="form-control" aria-describedby="passwordHelpInline" name="password" placeholder="password" [(ngModel)]="user.password">
+      <section class="botones">
+        <button type="submit" class="mybtn mybtn-red">Iniciar Sesión</button>
+        <button type="submit" class="mybtn mybtn-dark"><a href="http://localhost:4200/signin">¿Aún no tienes una cuenta? Regístrate</a></button>
+      </section>
+    </form>
+  </section>
+</section>

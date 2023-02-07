@@ -1,0 +1,37 @@
+<app-item-navbar></app-item-navbar>
+
+<section class="encabezado">
+    <section class="col-12 col-lg-4 titulo">
+        <h2>Café Las Flores</h2>
+        <h3>Tienda en Línea</h3>
+
+    </section>
+    <section class="col-12 col-lg-4 producto-img">
+        <img src="{{producto.imagen}}">
+    </section>
+
+    <section class="col-12 col-lg-4 producto-info">
+        <h1>{{producto.articulo}}</h1>
+          <p>{{producto.descripcion}}</p>
+
+        <section class="info">
+            <p>Disponibles: {{producto.disponibilidad}} pz</p>
+        </section>
+        <h2>${{producto.precio}}</h2>
+        <section class="botones">
+            <button class="mybtn mybtn-red comprar">Cancelar</button>
+            <button class="mybtn mybtn-red" (click)="agregar()">Añadir al Carrito</button>
+        </section>
+    </section>
+</section>
+
+<section class="imagenes">
+    <section class="fotos">
+        <img src="../../assets/cafe-grano.jpg" alt="" class="foto">
+        <img src="../../assets/cafe-grano.jpg" alt="" class="foto">
+        <img src="../../assets/cafe-grano.jpg" alt="" class="foto">
+        <img src="../../assets/cafe-grano.jpg" alt="" class="foto">
+    </section>
+</section>
+
+<app-item-footer></app-item-footer>

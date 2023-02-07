@@ -1,1 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+.mybtn{
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.mybtn-red{
+    background-color: #830b15;
+    color: #f2f2f2;
+    border: none;
+}
+
+.mybtn-red:hover{
+    background-color: #ba1422;
+    border: none;
+}
+
+.mybtn-brown{
+    background-color: #00000000;
+    border-color: #442c0e;
+    border-width: 1px;
+}
+
+.mybtn-brown:hover{
+    background-color: #442c0e;
+    border-width: 1px;
+    color: #D99748;
+}
+
+.mybtn-dark{
+    background-color: #252525;
+    color: #f2f2f2;
+    border-width: 1px;
+    border-color: #bdbdbd;
+    border-style: solid;
+}
+
+.mybtn-dark:hover{
+    background-color: #181818;
+    color: #f2f2f2;
+    border-width: 1px;
+    border-color: #bdbdbd;
+    border-style: solid;
+}

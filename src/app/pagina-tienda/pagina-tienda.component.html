@@ -1,0 +1,22 @@
+<app-item-navbar></app-item-navbar>
+<section class="tienda">
+  <section class="encabezado">
+    <h1>Café Las Flores</h1>
+    <h2>Tienda en Linea</h2>
+  </section>
+  <section class="productos">
+    <section class="fila" *ngFor="let producto of lista">
+      <a routerLink="/tienda/{{producto.id_producto}}"><div class="tarjeta">
+        <img src="{{producto.imagen}}">
+        <hr>
+        <section class="producto-info">
+          <h4>{{producto.articulo}}</h4>
+          <p>{{producto.descripcion}}</p>
+          <p class="precio">${{producto.precio}}</p>
+        </section>
+        </div>
+      </a>
+    </section>
+  </section>
+</section>
+<app-item-footer></app-item-footer>

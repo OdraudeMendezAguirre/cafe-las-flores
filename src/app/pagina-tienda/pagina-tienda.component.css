@@ -1,0 +1,64 @@
+.tienda{
+    background-color: #A60D1A;
+    width: 100%;
+    padding: 8rem;
+    color: #f2f2f2;
+}
+
+.tienda .encabezado h2{
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.fila{
+    padding: 2rem;
+    display: flex;
+    flex-direction: wrap;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+a{
+  text-decoration: none;
+}
+
+a .tarjeta{
+  width: 250px;
+  background-color: #830b15;
+  border-width: 2px;
+  border-color: #f2f2f2;
+  text-decoration: none;
+  color: #f2f2f2;
+  padding: 0px 20px;
+  margin-top: 2rem;
+}
+
+a .tarjeta:hover{
+  background-color: #A60D1A;
+}
+
+.tarjeta img{
+  width: 100%;
+}
+
+.tarjeta .producto-info{
+  padding: 20px 0px;
+}
+
+h4{
+  font-size: 1.3rem;
+}
+
+p{
+  font-size: .9rem;
+}
+
+.precio{
+  font-weight: bold;
+}
+
+@media screen and (max-width: 991px){
+    .tienda{
+        padding: 8rem 2rem;
+    }
+}

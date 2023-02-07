@@ -1,0 +1,36 @@
+nav{
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    background-color: #1a1a1a;
+}
+
+ul{
+    width: 100%;
+}
+
+ul li a{
+    color: #f2f2f2;
+}
+
+ul li a:hover{
+    background-color: #A60D1A;
+}
+
+.mynavbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: auto;
+}
+
+@media screen and (max-width:991px){
+    .mynavbar{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 1rem;
+        margin-left: 2rem;
+    }
+}
